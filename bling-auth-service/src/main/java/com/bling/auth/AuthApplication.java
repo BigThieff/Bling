@@ -1,10 +1,11 @@
-package com.bling;
+package com.bling.auth;
 
 /**
  * Hello world!
  *
  */
-public class App 
+@SpringBootApplication
+public class AuthApplication
 {
     public static void main( String[] args )
     {
