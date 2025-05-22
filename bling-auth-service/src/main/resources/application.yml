@@ -5,17 +5,18 @@ spring:
   application:
     name: bling-auth-service
 
-  datasource:
-    url: jdbc:mysql://localhost:3306/bling_auth?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  config:
+    import:
+      - optional:nacos:bling-common.yaml
+      # - optional:nacos:bling-auth-service.yaml
 
   cloud:
     nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        shared-configs:
+          - dataId: bling-common.yaml
+            refresh: true
       discovery:
         server-addr: localhost:8848
-
-mybatis:
-  mapper-locations: classpath*:mapper/**/*.xml
-  type-aliases-package: com.bling.auth.model

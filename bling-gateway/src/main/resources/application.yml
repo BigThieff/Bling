@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: bling-gateway
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+    gateway:
+      discovery:
+        locator:
+          enabled: false # 如果你不想通过服务名自动路由，就设为 false
+
+# logging 可选：方便开发期间调试
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
