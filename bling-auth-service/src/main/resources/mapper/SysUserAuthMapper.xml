@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.bling.auth.mapper.SysUserMapper">
+<mapper namespace="com.bling.auth.mapper.SysUserAuthMapper">
 
     <select id="findByUsername" resultType="com.bling.auth.model.SysUser" parameterType="string">
         SELECT

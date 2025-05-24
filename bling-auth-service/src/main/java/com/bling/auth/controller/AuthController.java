@@ -18,9 +18,4 @@ public class AuthController {
     public Result<String> login(@RequestBody LoginRequest request) {
         return authService.login(request);
     }
-
-    @GetMapping("/me")
-    public Result<String> getMe(HttpServletRequest request) {
-        return Result.ok("ok");
-    }
 }

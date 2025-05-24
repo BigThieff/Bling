@@ -15,6 +15,7 @@
         <module>bling-user-service</module>
         <module>bling-gateway</module>
         <module>bling-common</module>
+        <module>bling-permission-service</module>
     </modules>
 
     <properties>
