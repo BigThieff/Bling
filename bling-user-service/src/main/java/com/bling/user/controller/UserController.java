@@ -1,7 +1,7 @@
 package com.bling.user.controller;
 
-import com.bling.auth.model.SysUser;
 import com.bling.common.util.Result;
+import com.bling.user.model.SysUser;
 import com.bling.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

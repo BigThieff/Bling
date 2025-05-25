@@ -1,4 +1,5 @@
 package com.bling.auth.service;
+
 import com.bling.auth.model.LoginRequest;
 import com.bling.common.util.Result;
 

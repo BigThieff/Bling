@@ -1,6 +1,7 @@
 package com.bling.user.service;
 
-import com.bling.auth.model.SysUser;
+
+import com.bling.user.model.SysUser;
 
 import java.util.List;
 

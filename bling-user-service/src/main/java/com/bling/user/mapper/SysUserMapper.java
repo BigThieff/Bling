@@ -1,6 +1,6 @@
 package com.bling.user.mapper;
 
-import com.bling.auth.model.SysUser;
+import com.bling.user.model.SysUser;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

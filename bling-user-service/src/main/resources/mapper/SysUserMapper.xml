@@ -4,7 +4,7 @@
 
 <mapper namespace="com.bling.user.mapper.SysUserMapper">
 
-    <resultMap id="userMap" type="com.bling.auth.model.SysUser">
+    <resultMap id="userMap" type="com.bling.user.model.SysUser">
         <id property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="nickname" column="nickname"/>
@@ -20,12 +20,12 @@
         SELECT * FROM sys_user ORDER BY id DESC
     </select>
 
-    <insert id="insert" parameterType="com.bling.auth.model.SysUser" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insert" parameterType="com.bling.user.model.SysUser" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO sys_user(username, password, nickname, status)
         VALUES(#{username}, #{password}, #{nickname}, #{status})
     </insert>
 
-    <update id="update" parameterType="com.bling.auth.model.SysUser">
+    <update id="update" parameterType="com.bling.user.model.SysUser">
         UPDATE sys_user
         SET username = #{username}, nickname = #{nickname}, status = #{status}
         WHERE id = #{id}

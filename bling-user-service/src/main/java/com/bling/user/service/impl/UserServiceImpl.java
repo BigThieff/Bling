@@ -1,7 +1,7 @@
 package com.bling.user.service.impl;
 
-import com.bling.auth.model.SysUser;
 import com.bling.user.mapper.SysUserMapper;
+import com.bling.user.model.SysUser;
 import com.bling.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

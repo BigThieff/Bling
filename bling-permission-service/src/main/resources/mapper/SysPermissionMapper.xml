@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bling.permission.mapper.SysPermissionMapper">
+    <resultMap id="permMap" type="com.bling.permission.model.SysPermission">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="code" column="code"/>
+        <result property="type" column="type"/>
+        <result property="url" column="url"/>
+        <result property="method" column="method"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="permMap">
+        SELECT * FROM sys_permission ORDER BY id ASC
+    </select>
+
+    <select id="findById" parameterType="long" resultMap="permMap">
+        SELECT * FROM sys_permission WHERE id = #{id}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO sys_permission(name, code, type, url, method, parent_id)
+        VALUES(#{name}, #{code}, #{type}, #{url}, #{method}, #{parentId})
+    </insert>
+
+    <update id="update">
+        UPDATE sys_permission
+        SET name=#{name}, code=#{code}, type=#{type}, url=#{url}, method=#{method}, parent_id=#{parentId}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM sys_permission WHERE id=#{id}
+    </delete>
+</mapper>
