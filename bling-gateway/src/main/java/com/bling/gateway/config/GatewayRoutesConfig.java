@@ -22,8 +22,12 @@ public class GatewayRoutesConfig {
                         .filters(f -> f.filter(jwtAuthGatewayFilter)) // 添加 JWT 鉴权过滤器
                         .uri("http://localhost:8001")) // 注意这里的端口要与 auth-service 启动端口一致
                 .route("user-service", r -> r.path("/users/**")
-                        .filters(f -> f.filter(jwtAuthGatewayFilter)) // 添加 JWT 鉴权过滤器
-                        .uri("http://localhost:8002")) // 注意这里的端口要与 auth-service 启动端口一致
+                        .filters(f -> f.filter(jwtAuthGatewayFilter))
+                        .uri("http://localhost:8002"))
+                .route("permission-service", r -> r
+                        .path("/roles/**", "/permissions/**", "/user-roles/**", "/role-permissions/**")
+                        .filters(f -> f.filter(jwtAuthGatewayFilter))
+                        .uri("http://localhost:8003"))
                 .build();
     }
 }

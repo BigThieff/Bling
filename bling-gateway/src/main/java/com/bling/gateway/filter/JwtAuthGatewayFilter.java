@@ -2,9 +2,11 @@ package com.bling.gateway.filter;
 
 import com.bling.common.util.JwtUtils;
 import io.jsonwebtoken.Claims;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.core.Ordered;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,9 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class JwtAuthGatewayFilter implements GatewayFilter, Ordered {
+
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
