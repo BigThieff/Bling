@@ -42,11 +42,11 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
-        <!-- 你 common 模块的依赖（含 JwtUtils） -->
         <dependency>
             <groupId>com.bling</groupId>
             <artifactId>bling-common</artifactId>
-            <version>1.0-SNAPSHOT</version>  <!-- 也可以省略版本号用父项目统一管理 -->
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- 其他依赖如 nacos 或注册中心依赖，看你需要 -->

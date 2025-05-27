@@ -1,13 +1,14 @@
 package com.bling.permission.service.impl;
 
 import com.bling.permission.mapper.SysUserRoleMapper;
+import com.bling.permission.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserRoleServiceImpl {
+public class UserRoleServiceImpl implements UserRoleService {
     @Autowired
     private SysUserRoleMapper userRoleMapper;
 

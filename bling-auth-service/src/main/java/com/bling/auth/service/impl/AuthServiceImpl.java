@@ -35,7 +35,7 @@ public class AuthServiceImpl implements AuthService {
         String token = JwtUtils.createToken(user.getId(), user.getUsername());
 
         // 调用 permission-service 获取权限
-        Result<List<String>> result = remotePermissionClient.getPermissions(user.getId());//todo modify response
+        Result<List<Long>> result = remotePermissionClient.getPermissions(user.getId());//todo modify response
         if (!result.isSuccess()) {
             return Result.fail("获取权限失败");
         }
@@ -46,7 +46,7 @@ public class AuthServiceImpl implements AuthService {
         return Result.ok(token);
     }
 
-    private void cacheUserPermissionsToRedis(Long userId, List<String> permissions) {
+    private void cacheUserPermissionsToRedis(Long userId, List<Long> permissions) {
         String key = "bling:perm:user:" + userId;
         redisTemplate.delete(key); // 清除旧的权限
         if (permissions != null && !permissions.isEmpty()) {

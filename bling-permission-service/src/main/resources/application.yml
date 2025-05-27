@@ -1,26 +1,19 @@
-server:
-  port: 8003
-
 spring:
   application:
     name: bling-permission-service
 
   config:
     import:
-      - optional:nacos:bling-common.yaml
-      # - optional:nacos:bling-auth-service.yaml
+      - optional:nacos:bling-permission-service-dev.yaml
 
   cloud:
     nacos:
       config:
         server-addr: localhost:8848
         file-extension: yaml
-        shared-configs:
-          - dataId: bling-common.yaml
-            refresh: true
+        namespace: 571b9102-43b9-492b-9c2a-8ed2455d2f1e
+        group: group-dev
       discovery:
         server-addr: localhost:8848
-
-mybatis:
-  mapper-locations: classpath*:mapper/**/*.xml
-  type-aliases-package: com.bling.permission.model
+        namespace: 571b9102-43b9-492b-9c2a-8ed2455d2f1e
+        group: group-dev

@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false  # 如果你想自己配置路由
+#      routes:
+#        - id: auth-service
+#          uri: lb://bling-auth-service
+#          predicates:
+#            - Path=/api/auth/**
+#          filters:
+#            - StripPrefix=2
+#
+#        - id: user-service
+#          uri: lb://bling-user-service
+#          predicates:
+#            - Path=/api/users/**
+#          filters:
+#            - StripPrefix=2
+#
+#        - id: permission-service
+#          uri: lb://bling-permission-service
+#          predicates:
+#            - Path=/api/permissions/**
+#          filters:
+#            - StripPrefix=2
+
+# logging 可选：方便调试
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

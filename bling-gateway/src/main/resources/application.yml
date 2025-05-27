@@ -1,21 +1,18 @@
-server:
-  port: 8080
-
 spring:
   application:
-    name: bling-gateway
+    name: bling-gateway-service
 
   cloud:
     nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 571b9102-43b9-492b-9c2a-8ed2455d2f1e
+        group: group-dev
+        file-extension: yaml
+        shared-configs:
+          - dataId: bling-common-dev.yaml
+            refresh: true
       discovery:
         server-addr: localhost:8848
-
-    gateway:
-      discovery:
-        locator:
-          enabled: false # 如果你不想通过服务名自动路由，就设为 false
-
-# logging 可选：方便开发期间调试
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
+        namespace: 571b9102-43b9-492b-9c2a-8ed2455d2f1e
+        group: group-dev

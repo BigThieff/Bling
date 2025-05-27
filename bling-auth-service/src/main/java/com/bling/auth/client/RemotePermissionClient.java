@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "permission-service")
+@FeignClient(name = "bling-permission-service")
 public interface RemotePermissionClient {
 
     @GetMapping("/api/role-permissions/getRolePermissions")
-    Result<List<String>> getPermissions(@RequestParam("userId") Long userId);
+    Result<List<Long>> getPermissions(@RequestParam("userId") Long userId);
 }
