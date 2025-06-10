@@ -1,4 +1,4 @@
-package com.bling.auth.model;
+package com.bling.user.model;
 
 import java.sql.Timestamp;
 

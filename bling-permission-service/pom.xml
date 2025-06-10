@@ -7,10 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>bling-user-service</artifactId>
+    <artifactId>bling-permission-service</artifactId>
     <packaging>jar</packaging>
 
-    <name>bling-user-service</name>
+    <name>bling-permission-service</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -24,6 +24,7 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+
         <!-- Spring Boot Starter Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

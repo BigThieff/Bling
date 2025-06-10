@@ -1,21 +1,18 @@
 spring:
   application:
-    name: bling-auth-service
+    name: bling-user-service  # 会对应 bling-auth-service.yaml 这个配置文件
 
   config:
     import:
-      - optional:nacos:bling-auth-service-dev.yaml
+      - optional:nacos:bling-user-service-dev.yaml
 
   cloud:
     nacos:
       config:
         server-addr: localhost:8848
-        file-extension: yaml
         namespace: 571b9102-43b9-492b-9c2a-8ed2455d2f1e
+        file-extension: yaml
         group: group-dev
-        shared-configs:
-          - dataId: bling-common-dev.yaml
-            refresh: true
       discovery:
         server-addr: localhost:8848
         namespace: 571b9102-43b9-492b-9c2a-8ed2455d2f1e
